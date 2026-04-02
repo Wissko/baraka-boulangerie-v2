@@ -78,12 +78,11 @@ export default function Navigation() {
 
         {/* Desktop links */}
         <div
+          className="nav-desktop-links"
           style={{
-            display: "flex",
             gap: "2.5rem",
             alignItems: "center",
           }}
-          className="hidden md:flex"
         >
           {links.map((l) => (
             <Link
@@ -115,12 +114,11 @@ export default function Navigation() {
         {/* Mobile burger */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden"
+          className="nav-mobile-burger"
           style={{
             background: "none",
             border: "none",
             padding: "0.5rem",
-            display: "flex",
             flexDirection: "column",
             gap: "5px",
           }}

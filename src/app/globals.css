@@ -272,13 +272,23 @@ input[type="number"]::-webkit-outer-spin-button {
   pointer-events: none;
 }
 
+/* ─── NAV DESKTOP/MOBILE TOGGLE ─── */
+.nav-desktop-links {
+  display: flex;
+}
+.nav-mobile-burger {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .nav-desktop-links {
+    display: none !important;
+  }
+  .nav-mobile-burger {
+    display: flex !important;
+  }
   .nav-glass {
-    left: 1rem !important;
-    right: 1rem !important;
-    transform: none !important;
-    width: calc(100% - 2rem) !important;
-    justify-content: space-between;
+    padding: 0.6rem 1.25rem !important;
   }
 }
 
