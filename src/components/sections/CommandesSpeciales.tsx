@@ -269,31 +269,8 @@ export default function CommandesSpeciales() {
               <a
                 ref={ctaRef}
                 href="#commandes-form"
-                style={{
-                  display: "inline-block",
-                  fontFamily: "var(--font-dm-sans)",
-                  fontWeight: 400,
-                  fontSize: "0.62rem",
-                  letterSpacing: "0.3em",
-                  textTransform: "uppercase",
-                  color: "#1A1410",
-                  background: "#C9A96E",
-                  padding: "1.1rem 2.75rem",
-                  textDecoration: "none",
-                  animation: "cta-pulse 2.5s ease-in-out infinite",
-                  transition: "background 0.3s",
-                  willChange: "transform",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.animation = "none";
-                  el.style.background = "#A8833C";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.animation = "cta-pulse 2.5s ease-in-out infinite";
-                  el.style.background = "#C9A96E";
-                }}
+                className="btn-glass"
+                style={{ willChange: "transform" }}
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById("commandes-form")?.scrollIntoView({ behavior: "smooth" });
@@ -529,40 +506,18 @@ export default function CommandesSpeciales() {
                   <button
                     type="submit"
                     disabled={loading}
+                    className="btn-glass"
                     style={{
-                      fontFamily: "var(--font-dm-sans)",
-                      fontWeight: 400,
-                      fontSize: "0.62rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.28em",
-                      color: "#1A1410",
-                      background: loading ? "rgba(201,169,110,0.5)" : "#C9A96E",
-                      border: "none",
-                      padding: "1.15rem 3rem",
                       cursor: loading ? "wait" : "pointer",
-                      transition: "background 0.3s, transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s",
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "0.8rem",
-                    }}
-                    onMouseEnter={(e) => {
-                      if (!loading) {
-                        const el = e.currentTarget;
-                        el.style.background = "#A8833C";
-                        el.style.transform = "translateY(-2px)";
-                        el.style.boxShadow = "0 10px 28px rgba(201,169,110,0.2)";
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      const el = e.currentTarget;
-                      el.style.background = loading ? "rgba(201,169,110,0.5)" : "#C9A96E";
-                      el.style.transform = "";
-                      el.style.boxShadow = "";
+                      opacity: loading ? 0.6 : 1,
                     }}
                   >
                     {loading ? (
                       <>
-                        <span style={{ display: "inline-block", width: 10, height: 10, border: "1px solid rgba(26,20,16,0.3)", borderTopColor: "#1A1410", borderRadius: "50%", animation: "spin 0.7s linear infinite" }} />
+                        <span style={{ display: "inline-block", width: 10, height: 10, border: "1px solid rgba(201,169,110,0.3)", borderTopColor: "#C9A96E", borderRadius: "50%", animation: "spin 0.7s linear infinite" }} />
                         Envoi en cours
                       </>
                     ) : "Envoyer ma demande"}

@@ -206,30 +206,7 @@ export default function Hero() {
             <a
               href="#commandes"
               id="cta-magnetic"
-              style={{
-                fontFamily: "var(--font-dm-sans)",
-                fontWeight: 400,
-                fontSize: "0.65rem",
-                letterSpacing: "0.3em",
-                textTransform: "uppercase",
-                color: "#1A1410",
-                background: "#C9A96E",
-                padding: "1.1rem 3rem",
-                textDecoration: "none",
-                display: "inline-block",
-                animation: "cta-pulse 2.5s ease-in-out infinite",
-                transition: "background 0.3s, transform 0.5s cubic-bezier(0.22,1,0.36,1)",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.animation = "none";
-                el.style.background = "#A8833C";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.animation = "cta-pulse 2.5s ease-in-out infinite";
-                el.style.background = "#C9A96E";
-              }}
+              className="btn-glass"
             >
               Commander sur mesure
             </a>
