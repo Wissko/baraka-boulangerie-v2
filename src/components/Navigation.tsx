@@ -37,8 +37,29 @@ export default function Navigation() {
         zIndex: 9000,
         display: "flex",
         justifyContent: "center",
+        alignItems: "center",
+        gap: "1rem",
         pointerEvents: "none",
       }}>
+      {/* Logo — outside the pill */}
+      <motion.div
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.8, ease: EASE }}
+        style={{ pointerEvents: "auto", flexShrink: 0 }}
+      >
+        <Link href="/" style={{ textDecoration: "none", display: "inline-block" }}>
+          <Image
+            src="/images/Design sans titre.svg"
+            alt="Baraka Boulangeries"
+            width={52}
+            height={52}
+            style={{ borderRadius: "50%", objectFit: "cover" }}
+          />
+        </Link>
+      </motion.div>
+
+      {/* Glass pill — links only */}
       <motion.nav
         className="nav-glass"
         initial={{ y: -60, opacity: 0 }}
@@ -46,10 +67,10 @@ export default function Navigation() {
         transition={{ delay: 1.4, duration: 0.8, ease: EASE }}
         style={{
           pointerEvents: "auto",
-          padding: "0.75rem 2rem",
+          padding: "0.75rem 2.5rem",
           display: "flex",
           alignItems: "center",
-          gap: "2rem",
+          gap: "2.5rem",
           background: scrolled
             ? "rgba(45, 31, 26, 0.55)"
             : "rgba(45, 31, 26, 0.35)",
@@ -65,17 +86,6 @@ export default function Navigation() {
           position: "relative",
         }}
       >
-        {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none", display: "inline-block" }}>
-          <Image
-            src="/images/Design sans titre.svg"
-            alt="Baraka Boulangeries"
-            width={48}
-            height={48}
-            style={{ borderRadius: "50%", objectFit: "cover" }}
-          />
-        </Link>
-
         {/* Desktop links */}
         <div
           className="nav-desktop-links"
@@ -90,11 +100,11 @@ export default function Navigation() {
               href={l.href}
               style={{
                 fontFamily: "var(--font-dm-sans)",
-                fontWeight: 300,
+                fontWeight: 600,
                 fontSize: "0.6rem",
                 letterSpacing: "0.28em",
                 textTransform: "uppercase",
-                color: "rgba(250,247,242,0.7)",
+                color: "rgba(250,247,242,0.85)",
                 textDecoration: "none",
                 transition: "color 0.3s",
               }}
@@ -103,7 +113,7 @@ export default function Navigation() {
               }
               onMouseLeave={(e) =>
                 ((e.currentTarget as HTMLElement).style.color =
-                  "rgba(250,247,242,0.7)")
+                  "rgba(250,247,242,0.85)")
               }
             >
               {l.label}
