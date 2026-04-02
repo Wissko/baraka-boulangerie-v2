@@ -126,7 +126,7 @@ export default function Navigation() {
           ))}
         </div>
 
-        {/* Mobile burger */}
+        {/* Mobile burger + label */}
         <button
           onClick={() => setOpen(!open)}
           className="nav-mobile-burger"
@@ -134,83 +134,173 @@ export default function Navigation() {
             background: "none",
             border: "none",
             padding: "0.5rem",
-            flexDirection: "column",
-            gap: "5px",
+            alignItems: "center",
+            gap: "0.75rem",
+            cursor: "pointer",
           }}
           aria-label="Menu"
         >
-          <motion.span
-            animate={{ rotate: open ? 45 : 0, y: open ? 7 : 0 }}
+          <span
             style={{
-              display: "block",
-              width: 22,
-              height: 1,
-              background: "#E8191A",
-              transformOrigin: "center",
+              fontFamily: "var(--font-dm-sans)",
+              fontWeight: 600,
+              fontSize: "0.65rem",
+              letterSpacing: "0.3em",
+              textTransform: "uppercase",
+              color: "rgba(250,247,242,0.85)",
             }}
-          />
-          <motion.span
-            animate={{ opacity: open ? 0 : 1 }}
-            style={{ display: "block", width: 22, height: 1, background: "#E8191A" }}
-          />
-          <motion.span
-            animate={{ rotate: open ? -45 : 0, y: open ? -7 : 0 }}
-            style={{
-              display: "block",
-              width: 22,
-              height: 1,
-              background: "#E8191A",
-              transformOrigin: "center",
-            }}
-          />
+          >
+            {open ? "Fermer" : "Menu"}
+          </span>
+          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <motion.span
+              animate={{ rotate: open ? 45 : 0, y: open ? 6 : 0 }}
+              style={{
+                display: "block",
+                width: 20,
+                height: 1.5,
+                background: "#E8191A",
+                transformOrigin: "center",
+                borderRadius: 1,
+              }}
+            />
+            <motion.span
+              animate={{ opacity: open ? 0 : 1, width: open ? 0 : 14 }}
+              style={{ display: "block", height: 1.5, background: "#E8191A", borderRadius: 1 }}
+            />
+            <motion.span
+              animate={{ rotate: open ? -45 : 0, y: open ? -6 : 0 }}
+              style={{
+                display: "block",
+                width: 20,
+                height: 1.5,
+                background: "#E8191A",
+                transformOrigin: "center",
+                borderRadius: 1,
+              }}
+            />
+          </div>
         </button>
       </motion.nav>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — Liquid Glass fullscreen */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ ease: EASE, duration: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ ease: EASE, duration: 0.5 }}
             style={{
               position: "fixed",
               inset: 0,
               zIndex: 8000,
-              background: "rgba(45, 31, 26, 0.97)",
+              background: "rgba(45, 31, 26, 0.6)",
+              backdropFilter: "blur(30px) saturate(180%) brightness(0.9)",
+              WebkitBackdropFilter: "blur(30px) saturate(180%) brightness(0.9)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              gap: "2.5rem",
+              padding: "2rem",
             }}
           >
-            {links.map((l, i) => (
+            {/* Glass card container for links */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.92 }}
+              transition={{ delay: 0.1, ease: EASE, duration: 0.5 }}
+              style={{
+                background: "rgba(26, 20, 16, 0.45)",
+                backdropFilter: "blur(24px) saturate(160%)",
+                WebkitBackdropFilter: "blur(24px) saturate(160%)",
+                border: "1px solid rgba(232, 25, 26, 0.2)",
+                borderRadius: "28px",
+                padding: "3rem 2.5rem",
+                width: "100%",
+                maxWidth: "380px",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08), 0 24px 80px rgba(0,0,0,0.5)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 0,
+              }}
+            >
+              {links.map((l, i) => (
+                <motion.div
+                  key={l.href}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 + i * 0.06, ease: EASE, duration: 0.45 }}
+                  style={{ width: "100%", textAlign: "center" }}
+                >
+                  {i > 0 && (
+                    <div
+                      style={{
+                        height: "1px",
+                        background: "linear-gradient(90deg, transparent 0%, rgba(232,25,26,0.2) 50%, transparent 100%)",
+                        margin: "0 2rem",
+                      }}
+                    />
+                  )}
+                  <Link
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    style={{
+                      fontFamily: "var(--font-cormorant)",
+                      fontStyle: "italic",
+                      fontSize: "clamp(1.8rem, 7vw, 2.8rem)",
+                      color: "rgba(250,247,242,0.85)",
+                      textDecoration: "none",
+                      fontWeight: 400,
+                      letterSpacing: "-0.01em",
+                      display: "block",
+                      padding: "0.9rem 0",
+                      transition: "color 0.3s",
+                    }}
+                  >
+                    {l.label}
+                  </Link>
+                </motion.div>
+              ))}
+
+              {/* CTA at bottom */}
               <motion.div
-                key={l.href}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.07, ease: EASE, duration: 0.4 }}
+                transition={{ delay: 0.5, ease: EASE, duration: 0.5 }}
+                style={{ marginTop: "1.5rem", width: "100%", textAlign: "center" }}
               >
                 <Link
-                  href={l.href}
+                  href="/commandes"
                   onClick={() => setOpen(false)}
-                  style={{
-                    fontFamily: "var(--font-cormorant)",
-                    fontStyle: "italic",
-                    fontSize: "clamp(2.5rem, 8vw, 4rem)",
-                    color: "#FAF7F2",
-                    textDecoration: "none",
-                    fontWeight: 300,
-                    letterSpacing: "-0.02em",
-                  }}
+                  className="btn-glass"
+                  style={{ width: "100%", textAlign: "center", display: "block" }}
                 >
-                  {l.label}
+                  Commander sur mesure
                 </Link>
               </motion.div>
-            ))}
+            </motion.div>
+
+            {/* Corner label */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              style={{
+                fontFamily: "var(--font-dm-sans)",
+                fontWeight: 300,
+                fontSize: "0.45rem",
+                letterSpacing: "0.4em",
+                textTransform: "uppercase",
+                color: "rgba(250,247,242,0.2)",
+                marginTop: "2rem",
+              }}
+            >
+              Baraka Boulangeries · Depuis 2010
+            </motion.p>
           </motion.div>
         )}
       </AnimatePresence>
