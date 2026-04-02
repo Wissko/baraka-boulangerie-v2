@@ -141,7 +141,7 @@ export default function CommandesSpeciales() {
     <section
       id="commandes"
       style={{
-        background: "#FAF7F2",
+        background: "var(--cream)",
         padding: "clamp(5rem, 12vw, 10rem) 0",
         paddingTop: "clamp(7rem, 12vw, 10rem)",
         overflow: "hidden",

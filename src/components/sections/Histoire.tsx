@@ -61,7 +61,7 @@ export default function Histoire() {
     <section
       id="histoire"
       ref={sectionRef}
-      style={{ background: "#F2EDE6", padding: "clamp(5rem, 12vw, 10rem) 0", paddingTop: "clamp(7rem, 12vw, 10rem)", overflow: "hidden" }}
+      style={{ background: "var(--cream)", padding: "clamp(5rem, 12vw, 10rem) 0", paddingTop: "clamp(7rem, 12vw, 10rem)", overflow: "hidden" }}
     >
       {/* ── Section label + border scroll ── */}
       <div
