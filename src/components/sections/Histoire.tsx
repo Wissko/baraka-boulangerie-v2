@@ -177,8 +177,8 @@ export default function Histoire() {
             }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1600&q=85"
-              alt="Artisan boulanger Baraka en train de façonner la pâte"
+              src="/images/baguettes.jpg"
+              alt="Baguettes artisanales Baraka, pains façonnés à la main"
               fill
               loading="lazy"
               sizes="(max-width: 768px) 100vw, 70vw"

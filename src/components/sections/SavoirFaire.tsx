@@ -50,8 +50,8 @@ export default function SavoirFaire() {
         }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=2000&q=85"
-          alt="Artisan boulanger Baraka pétrit la pâte à 4h du matin"
+          src="/images/patisseries.jpg"
+          alt="Assortiment de pâtisseries artisanales Baraka, savoir-faire et excellence"
           fill
           loading="lazy"
           sizes="100vw"

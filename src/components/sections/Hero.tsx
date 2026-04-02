@@ -38,8 +38,8 @@ export default function Hero() {
         transition={{ duration: 2.8, ease: EASE }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=2400&q=90"
-          alt="Boulangerie artisanale Baraka, croissants et pains frais"
+          src="/images/vitrine.jpg"
+          alt="Vitrine de la boulangerie Baraka, devanture artisanale"
           fill
           priority
           sizes="100vw"
