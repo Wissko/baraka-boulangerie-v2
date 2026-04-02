@@ -26,7 +26,7 @@ export default function Footer() {
     <footer
       style={{
         background: "#2D1F1A",
-        padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 5rem) 2rem",
+        padding: "clamp(3rem, 5vw, 4.5rem) clamp(2rem, 7vw, 6rem) 2rem",
         borderTop: "1px solid rgba(232,25,26,0.15)",
       }}
     >
@@ -35,10 +35,12 @@ export default function Footer() {
         className="footer-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1.5fr 1fr",
-          gap: "clamp(2rem, 5vw, 5rem)",
+          gridTemplateColumns: "1fr 1fr 1fr",
+          gap: "clamp(2rem, 4vw, 4rem)",
           alignItems: "end",
-          marginBottom: "clamp(3rem, 6vw, 5rem)",
+          maxWidth: "1100px",
+          margin: "0 auto",
+          marginBottom: "clamp(2.5rem, 4vw, 3.5rem)",
         }}
       >
         {/* Col 1 — Édito */}
@@ -60,10 +62,10 @@ export default function Footer() {
             style={{
               fontFamily: "var(--font-cormorant)",
               fontStyle: "italic",
-              fontSize: "2.5rem",
+              fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
               fontWeight: 400,
               color: "#FAF7F2",
-              lineHeight: 1.1,
+              lineHeight: 1.15,
               marginBottom: "1.25rem",
               whiteSpace: "pre-line",
             }}
@@ -95,15 +97,15 @@ export default function Footer() {
             style={{
               fontFamily: "var(--font-cormorant)",
               fontStyle: "italic",
-              fontSize: "clamp(5rem, 12vw, 11rem)",
-              fontWeight: 600,
+              fontSize: "clamp(3rem, 6vw, 5.5rem)",
+              fontWeight: 400,
               color: "#E8191A",
-              letterSpacing: "-0.04em",
-              lineHeight: 0.85,
+              letterSpacing: "-0.03em",
+              lineHeight: 0.9,
               margin: 0,
             }}
           >
-            BARAKA
+            Baraka
           </p>
           <p
             style={{
@@ -125,7 +127,9 @@ export default function Footer() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "4px",
+            gap: "3px",
+            maxWidth: "240px",
+            marginLeft: "auto",
           }}
         >
           {gallery.map((img) => (
@@ -162,7 +166,9 @@ export default function Footer() {
         style={{
           height: "1px",
           background: "rgba(232,25,26,0.2)",
-          marginBottom: "2rem",
+          marginBottom: "1.75rem",
+          maxWidth: "1100px",
+          margin: "0 auto 1.75rem",
         }}
       />
 
@@ -173,8 +179,10 @@ export default function Footer() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          gap: "3rem",
-          marginBottom: "2rem",
+          gap: "2.5rem",
+          marginBottom: "1.75rem",
+          maxWidth: "1100px",
+          margin: "0 auto 1.75rem",
         }}
       >
         {navLinks.map((link) => (
