@@ -1,26 +1,214 @@
 @import "tailwindcss";
 
+/* ─── BARAKA V2 — DESIGN TOKENS ─── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Palette artisanale premium */
+  --gold: #C9A96E;
+  --gold-light: #E0C48A;
+  --gold-dark: #A8833C;
+  --caramel: #8B5E3C;
+  --ink: #1A1410;
+  --ink-soft: rgba(26, 20, 16, 0.65);
+  --ink-muted: rgba(26, 20, 16, 0.35);
+  --cream: #FAF7F2;
+  --cream-dark: #F2EDE4;
+  --dark-bg: #0F0C09;
+  --dark-card: rgba(26, 20, 16, 0.6);
+
+  /* Spacing system */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Glass radius */
+  --glass-radius: 2px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── RESET ULTRA DESIGN ─── */
+*, *::before, *::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ─── SCROLLBAR CARAMEL ─── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
+}
+
+/* ─── SELECTION OR ─── */
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* ─── CURSEUR CUSTOM ─── */
+* {
+  cursor: none !important;
+}
+
+/* ─── SIGNATURE BORDER SCROLL ─── */
+.border-scroll::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.border-scroll.in-view::after {
+  transform: scaleX(1);
+}
+
+/* ─── CTA PULSE ─── */
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.5); }
+  50% { box-shadow: 0 0 0 14px rgba(201, 169, 110, 0); }
+}
+
+/* ─── GLASS SHIMMER ─── */
+@keyframes glass-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ─── MESH DRIFT ─── */
+@keyframes mesh-drift {
+  0% { filter: hue-rotate(0deg) brightness(1); }
+  50% { filter: hue-rotate(15deg) brightness(1.05); }
+  100% { filter: hue-rotate(0deg) brightness(1); }
+}
+
+/* ─── SPIN ─── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── REDUCED MOTION ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── GRAIN OVERLAY ─── */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+}
+
+/* ─── EDGE TITLE ─── */
+.edge-title {
+  font-size: clamp(4rem, 15vw, 18rem);
+  white-space: nowrap;
+  letter-spacing: -0.03em;
+  line-height: 0.88;
+}
+
+/* ─── GLASS CARD ─── */
+.glass-dark {
+  background: rgba(10, 8, 5, 0.55);
+  border: 1px solid rgba(201, 169, 110, 0.12);
+  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+  box-shadow:
+    inset 0 1px 0 rgba(201, 169, 110, 0.1),
+    0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.glass-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(201, 169, 110, 0.04) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: glass-shimmer 5s ease-in-out infinite;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* ─── MESH BG ─── */
+.mesh-dark {
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 25%, hsla(30, 60%, 25%, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 85% 75%, hsla(20, 50%, 18%, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, hsla(25, 40%, 12%, 0.3) 0%, transparent 70%),
+    hsl(20, 30%, 6%);
+  animation: mesh-drift 16s ease-in-out infinite;
+}
+
+/* ─── SECTION NUMBERS ─── */
+.section-number {
+  font-family: var(--font-cormorant);
+  font-style: italic;
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+
+/* ─── CORNER LABEL ─── */
+.corner-label {
+  font-size: 0.5rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+/* ─── INPUT BOTTOM BORDER ─── */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.35;
+  cursor: pointer;
+  filter: sepia(1) hue-rotate(5deg);
+}
+input::placeholder,
+textarea::placeholder {
+  color: rgba(26, 20, 16, 0.22);
+  font-weight: 300;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.25;
 }
