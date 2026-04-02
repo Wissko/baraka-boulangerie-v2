@@ -121,7 +121,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.9, ease: EASE }}
             style={{
-              display: "inline-block",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
               maxWidth: "700px",
             }}
           >
@@ -177,7 +179,7 @@ export default function Hero() {
                   color: "rgba(232,25,26,0.85)",
                   letterSpacing: "0.02em",
                   lineHeight: 1.1,
-                  marginLeft: "clamp(0rem, 2vw, 3rem)",
+                  marginLeft: 0,
                   willChange: "transform, opacity",
                 }}
               >

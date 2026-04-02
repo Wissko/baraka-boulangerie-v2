@@ -29,24 +29,18 @@ export default function Navigation() {
   return (
     <>
       {/* Wrapper centré — Framer Motion ne peut pas gérer translateX(-50%) seul */}
-      <div style={{
-        position: "fixed",
-        top: "1.25rem",
-        left: 0,
-        right: 0,
-        zIndex: 9000,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: "1rem",
-        pointerEvents: "none",
-      }}>
-      {/* Logo — outside the pill */}
+      {/* Logo — fixed left */}
       <motion.div
         initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.8, ease: EASE }}
-        style={{ pointerEvents: "auto", flexShrink: 0 }}
+        style={{
+          position: "fixed",
+          top: "1.25rem",
+          left: "clamp(1rem, 4vw, 2.5rem)",
+          zIndex: 9001,
+          pointerEvents: "auto",
+        }}
       >
         <Link href="/" style={{ textDecoration: "none", display: "inline-block" }}>
           <Image
@@ -59,7 +53,18 @@ export default function Navigation() {
         </Link>
       </motion.div>
 
-      {/* Glass pill — links only */}
+      {/* Pill wrapper — centered */}
+      <div style={{
+        position: "fixed",
+        top: "1.25rem",
+        left: 0,
+        right: 0,
+        zIndex: 9000,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        pointerEvents: "none",
+      }}>
       <motion.nav
         className="nav-glass"
         initial={{ y: -60, opacity: 0 }}
