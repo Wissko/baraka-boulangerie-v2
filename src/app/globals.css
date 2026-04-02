@@ -321,3 +321,81 @@ input[type="number"]::-webkit-outer-spin-button {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ─── BARAKA MASSIF — taille max sur très petit écran ─── */
+@media (max-width: 480px) {
+  .footer-hero-title {
+    font-size: clamp(4rem, 28vw, 8rem) !important;
+  }
+}
+
+/* ─── COMMANDES — grille mobile ─── */
+@media (max-width: 768px) {
+  .commandes-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .commandes-prenom-nom {
+    grid-template-columns: 1fr !important;
+  }
+  .commandes-cta-row {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+}
+
+/* ─── HISTOIRE — golden ratio → 1 col mobile ─── */
+@media (max-width: 768px) {
+  .histoire-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .histoire-stats {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  .histoire-right-col {
+    padding-left: 0 !important;
+  }
+}
+
+/* ─── ADRESSES — grille boutique mobile ─── */
+@media (max-width: 640px) {
+  .adresse-row {
+    grid-template-columns: 48px 1fr auto !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* ─── CREATIONS — card footer lisible ─── */
+@media (max-width: 480px) {
+  .creation-card-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.4rem !important;
+  }
+}
+
+/* ─── SAVOIR-FAIRE — quote overlay lisible ─── */
+@media (max-width: 480px) {
+  .savoir-faire-quote blockquote {
+    font-size: clamp(1.4rem, 6vw, 2.5rem) !important;
+  }
+}
+
+/* ─── NAVBAR — logo + burger bien visibles mobile ─── */
+@media (max-width: 768px) {
+  .nav-glass {
+    padding: 0.6rem 1rem !important;
+  }
+}
+
+/* ─── FOOTER BOTTOM BAR — wrap propre ─── */
+@media (max-width: 640px) {
+  .footer-bottom-bar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.6rem !important;
+  }
+}

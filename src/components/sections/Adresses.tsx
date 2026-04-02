@@ -150,6 +150,7 @@ export default function Adresses() {
               }}
             >
               <div
+                className="adresse-row"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "80px 1fr auto",

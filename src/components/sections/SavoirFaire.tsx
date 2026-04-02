@@ -70,6 +70,7 @@ export default function SavoirFaire() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 1, ease: EASE }}
+          className="savoir-faire-quote"
           style={{
             position: "absolute",
             bottom: "clamp(2.5rem, 6vw, 5rem)",

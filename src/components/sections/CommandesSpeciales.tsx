@@ -178,6 +178,7 @@ export default function CommandesSpeciales() {
 
         {/* EDGE™ grid golden ratio */}
         <div
+          className="commandes-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "clamp(280px, 35%, 420px) 1fr",
@@ -469,7 +470,7 @@ export default function CommandesSpeciales() {
                     <span style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 300, fontSize: "0.52rem", letterSpacing: "0.3em", textTransform: "uppercase", color: "rgba(250,247,242,0.3)" }}>Coordonnées</span>
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+                    <div className="commandes-prenom-nom" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
                       {[["prenom", "Prénom", prenom, setPrenom], ["nom", "Nom", nom, setNom]].map(([field, lbl, val, setter]) => (
                         <div key={field as string}>
                           <label style={{ ...labelStyle, color: focused === field ? "#E8191A" : "rgba(250,247,242,0.35)" }}>{lbl as string}</label>
@@ -503,7 +504,7 @@ export default function CommandesSpeciales() {
                 )}
 
                 {/* Submit */}
-                <div style={{ display: "flex", alignItems: "center", gap: "2rem", flexWrap: "wrap" }}>
+                <div className="commandes-cta-row" style={{ display: "flex", alignItems: "center", gap: "2rem", flexWrap: "wrap" }}>
                   <button
                     type="submit"
                     disabled={loading}

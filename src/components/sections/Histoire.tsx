@@ -92,6 +92,7 @@ export default function Histoire() {
 
       {/* ── EDGE™ Golden ratio grid: 1fr 2.618fr ── */}
       <div
+        className="histoire-grid"
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 2.618fr",
@@ -104,6 +105,7 @@ export default function Histoire() {
       >
         {/* Left col — stats corner gravity bottom-left */}
         <div
+          className="histoire-stats"
           style={{
             display: "flex",
             flexDirection: "column",
@@ -161,7 +163,7 @@ export default function Histoire() {
         </div>
 
         {/* Right col — image + text */}
-        <div style={{ paddingLeft: "clamp(2rem, 5vw, 5rem)" }}>
+        <div className="histoire-right-col" style={{ paddingLeft: "clamp(2rem, 5vw, 5rem)" }}>
           {/* Image with scroll reveal */}
           <motion.div
             initial={{ clipPath: "inset(0 0 100% 0)" }}

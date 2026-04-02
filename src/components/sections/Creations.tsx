@@ -126,6 +126,7 @@ function GlassCard({ item, index }: { item: typeof creations[0]; index: number }
 
       {/* Card footer */}
       <div
+        className="creation-card-footer"
         style={{
           padding: "1.25rem 0 0",
           borderTop: "1px solid rgba(232,25,26,0.2)",

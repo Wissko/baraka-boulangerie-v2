@@ -33,6 +33,7 @@ export default function Footer() {
         {/* Col gauche — BARAKA massif EDGE™ */}
         <div style={{ overflow: "hidden" }}>
           <motion.h2
+            className="footer-hero-title"
             initial={{ y: "105%" }}
             animate={inView ? { y: 0 } : {}}
             transition={{ duration: 1.2, ease: EASE }}
@@ -178,6 +179,7 @@ export default function Footer() {
 
       {/* ── Barre bottom ── */}
       <div
+        className="footer-bottom-bar"
         style={{
           display: "flex",
           justifyContent: "space-between",
