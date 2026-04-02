@@ -75,7 +75,7 @@ function GlassCard({ item, index }: { item: typeof creations[0]; index: number }
       }}
     >
       {/* Image */}
-      <div style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden" }}>
+      <div style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden", borderRadius: "16px" }}>
         <Image
           src={item.src}
           alt={item.alt}

@@ -55,7 +55,8 @@ export default function SavoirFaire() {
           fill
           loading="lazy"
           sizes="100vw"
-          style={{ objectFit: "cover", objectPosition: "center 30%" }}
+          data-no-round
+          style={{ objectFit: "cover", objectPosition: "center 30%", borderRadius: 0 }}
         />
         {/* Dark gradient */}
         <div

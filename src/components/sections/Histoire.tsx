@@ -175,6 +175,7 @@ export default function Histoire() {
               aspectRatio: "16/9",
               marginBottom: "3rem",
               overflow: "hidden",
+              borderRadius: "16px",
               willChange: "transform, opacity",
             }}
           >

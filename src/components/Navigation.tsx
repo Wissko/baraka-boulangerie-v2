@@ -67,7 +67,7 @@ export default function Navigation() {
         transition={{ delay: 1.4, duration: 0.8, ease: EASE }}
         style={{
           pointerEvents: "auto",
-          padding: "0.75rem 2.5rem",
+          padding: "1rem 3rem",
           display: "flex",
           alignItems: "center",
           gap: "2.5rem",
@@ -101,7 +101,7 @@ export default function Navigation() {
               style={{
                 fontFamily: "var(--font-dm-sans)",
                 fontWeight: 600,
-                fontSize: "0.6rem",
+                fontSize: "0.72rem",
                 letterSpacing: "0.28em",
                 textTransform: "uppercase",
                 color: "rgba(250,247,242,0.85)",

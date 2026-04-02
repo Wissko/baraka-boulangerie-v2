@@ -185,6 +185,11 @@ body {
   line-height: 0.88;
 }
 
+/* ─── ROUNDED IMAGES — Luxe touch ─── */
+img:not([data-no-round]) {
+  border-radius: 12px;
+}
+
 /* ─── GLASS CARD ─── */
 .glass-dark {
   background: rgba(10, 8, 5, 0.55);

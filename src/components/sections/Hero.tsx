@@ -43,7 +43,8 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          style={{ objectFit: "cover", objectPosition: "center" }}
+          data-no-round
+          style={{ objectFit: "cover", objectPosition: "center", borderRadius: 0 }}
         />
         {/* Overlay gradient luxueux — profondeur */}
         <div
