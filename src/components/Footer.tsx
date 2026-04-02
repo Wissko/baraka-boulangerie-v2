@@ -1,138 +1,272 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
+
+const navLinks = [
+  { label: "Histoire", href: "/histoire" },
+  { label: "Créations", href: "/creations" },
+  { label: "Commander", href: "/commandes" },
+  { label: "Savoir-faire", href: "/savoir-faire" },
+  { label: "Adresses", href: "/adresses" },
+];
+
+const gallery = [
+  { src: "/images/baguettes.jpg", alt: "Pains artisanaux Baraka" },
+  { src: "/images/fraisier.jpg", alt: "Fraisier Baraka" },
+  { src: "/images/patisseries.jpg", alt: "Pâtisseries Baraka" },
+  { src: "/images/vitrine-noel.jpg", alt: "Vitrine Baraka" },
+];
 
 export default function Footer() {
   return (
     <footer
       style={{
         background: "#2D1F1A",
-        borderTop: "1px solid rgba(232,25,26,0.12)",
-        padding: "clamp(3rem, 7vw, 5rem) clamp(1.5rem, 7vw, 5rem)",
+        padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 5rem) 2rem",
+        borderTop: "1px solid rgba(232,25,26,0.15)",
       }}
     >
+      {/* ── Grid principale 3 colonnes ── */}
       <div
+        className="footer-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr auto",
-          gap: "2rem",
+          gridTemplateColumns: "1fr 1.5fr 1fr",
+          gap: "clamp(2rem, 5vw, 5rem)",
           alignItems: "end",
-          maxWidth: 1400,
-          margin: "0 auto",
+          marginBottom: "clamp(3rem, 6vw, 5rem)",
         }}
       >
-        {/* Logo + tagline */}
+        {/* Col 1 — Édito */}
         <div>
+          <p
+            style={{
+              fontFamily: "var(--font-dm-sans)",
+              fontWeight: 300,
+              fontSize: "0.55rem",
+              letterSpacing: "0.38em",
+              textTransform: "uppercase",
+              color: "#E8191A",
+              marginBottom: "1rem",
+            }}
+          >
+            Nos Maisons
+          </p>
           <p
             style={{
               fontFamily: "var(--font-cormorant)",
               fontStyle: "italic",
-              fontSize: "clamp(2rem, 5vw, 4rem)",
-              fontWeight: 300,
+              fontSize: "2.5rem",
+              fontWeight: 400,
               color: "#FAF7F2",
-              letterSpacing: "-0.03em",
-              lineHeight: 0.9,
+              lineHeight: 1.1,
               marginBottom: "1.25rem",
+              whiteSpace: "pre-line",
             }}
           >
-            Baraka
+            {"L'artisanat\nà l'état pur"}
           </p>
           <p
             style={{
               fontFamily: "var(--font-dm-sans)",
               fontWeight: 300,
-              fontSize: "0.62rem",
-              letterSpacing: "0.28em",
-              textTransform: "uppercase",
-              color: "rgba(232,25,26,0.5)",
+              fontSize: "0.85rem",
+              color: "rgba(250,247,242,0.55)",
+              maxWidth: "28ch",
+              lineHeight: 1.8,
             }}
           >
-            L'art de la boulangerie française depuis 2010
+            Depuis 2010, Baraka perpétue l'art de la boulangerie française dans 5 boutiques en Île-de-France.
           </p>
         </div>
 
-        {/* Links */}
-        <nav
+        {/* Col 2 — Brand massif */}
+        <div
+          className="footer-brand-col"
           style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem",
-            alignItems: "flex-end",
+            alignSelf: "end",
           }}
         >
-          {[
-            { label: "Notre histoire", href: "#histoire" },
-            { label: "Nos créations", href: "#creations" },
-            { label: "Commander sur mesure", href: "#commandes" },
-            { label: "Nos adresses", href: "#adresses" },
-          ].map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
+          <p
+            style={{
+              fontFamily: "var(--font-cormorant)",
+              fontStyle: "italic",
+              fontSize: "clamp(5rem, 12vw, 11rem)",
+              fontWeight: 600,
+              color: "#E8191A",
+              letterSpacing: "-0.04em",
+              lineHeight: 0.85,
+              margin: 0,
+            }}
+          >
+            BARAKA
+          </p>
+          <p
+            style={{
+              fontFamily: "var(--font-dm-sans)",
+              fontWeight: 300,
+              fontSize: "0.55rem",
+              letterSpacing: "0.35em",
+              textTransform: "uppercase",
+              color: "rgba(250,247,242,0.4)",
+              marginTop: "0.75rem",
+            }}
+          >
+            Boulangeries
+          </p>
+        </div>
+
+        {/* Col 3 — Galerie 2×2 */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "4px",
+          }}
+        >
+          {gallery.map((img) => (
+            <div
+              key={img.src}
               style={{
-                fontFamily: "var(--font-dm-sans)",
-                fontWeight: 300,
-                fontSize: "0.62rem",
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: "rgba(250,247,242,0.35)",
-                textDecoration: "none",
-                transition: "color 0.3s",
+                aspectRatio: "1 / 1",
+                overflow: "hidden",
+                position: "relative",
               }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.color = "#E8191A")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLElement).style.color =
-                  "rgba(250,247,242,0.35)")
-              }
             >
-              {link.label}
-            </a>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                style={{
+                  objectFit: "cover",
+                  transition: "transform 0.4s ease",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.transform = "scale(1.05)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.transform = "scale(1)";
+                }}
+              />
+            </div>
           ))}
-        </nav>
+        </div>
       </div>
 
-      {/* Signature line */}
+      {/* ── Divider ── */}
       <div
         style={{
-          maxWidth: 1400,
-          margin: "3rem auto 0",
-          borderTop: "1px solid rgba(232,25,26,0.08)",
-          paddingTop: "2rem",
+          height: "1px",
+          background: "rgba(232,25,26,0.2)",
+          marginBottom: "2rem",
+        }}
+      />
+
+      {/* ── Barre nav ── */}
+      <nav
+        className="footer-nav-links"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "3rem",
+          marginBottom: "2rem",
+        }}
+      >
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            style={{
+              fontFamily: "var(--font-dm-sans)",
+              fontWeight: 300,
+              fontSize: "0.55rem",
+              letterSpacing: "0.32em",
+              textTransform: "uppercase",
+              color: "rgba(250,247,242,0.5)",
+              textDecoration: "none",
+              transition: "color 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.color = "#E8191A";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.color = "rgba(250,247,242,0.5)";
+            }}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+
+      {/* ── Divider ── */}
+      <div
+        style={{
+          height: "1px",
+          background: "rgba(232,25,26,0.12)",
+          marginBottom: "1.5rem",
+        }}
+      />
+
+      {/* ── Barre bottom ── */}
+      <div
+        style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: "wrap",
-          gap: "1rem",
+          gap: "0.75rem",
         }}
       >
-        <p
+        <span
           style={{
             fontFamily: "var(--font-dm-sans)",
             fontWeight: 300,
-            fontSize: "0.52rem",
-            letterSpacing: "0.18em",
+            fontSize: "0.5rem",
+            letterSpacing: "0.25em",
             textTransform: "uppercase",
-            color: "rgba(250,247,242,0.18)",
+            color: "rgba(250,247,242,0.3)",
           }}
         >
-          {new Date().getFullYear()} — Baraka Boulangeries
-        </p>
-        <p
+          © 2025 Baraka Boulangeries
+        </span>
+        <span
           style={{
-            fontFamily: "var(--font-cormorant)",
-            fontStyle: "italic",
-            fontSize: "0.9rem",
+            fontFamily: "var(--font-dm-sans)",
             fontWeight: 300,
-            color: "rgba(232,25,26,0.3)",
-            letterSpacing: "0.04em",
+            fontSize: "0.5rem",
+            letterSpacing: "0.25em",
+            textTransform: "uppercase",
+            color: "rgba(250,247,242,0.3)",
           }}
         >
           Fait avec passion, chaque matin
-        </p>
+        </span>
+        <a
+          href="#"
+          style={{
+            fontFamily: "var(--font-dm-sans)",
+            fontWeight: 300,
+            fontSize: "0.5rem",
+            letterSpacing: "0.25em",
+            textTransform: "uppercase",
+            color: "rgba(250,247,242,0.3)",
+            textDecoration: "none",
+            transition: "color 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLElement).style.color = "rgba(250,247,242,0.6)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLElement).style.color = "rgba(250,247,242,0.3)";
+          }}
+        >
+          Mentions légales
+        </a>
       </div>
     </footer>
   );
