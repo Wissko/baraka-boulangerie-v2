@@ -28,28 +28,32 @@ export default function Navigation() {
   return (
     <>
       <motion.nav
-        initial={{ y: -80, opacity: 0 }}
+        className="nav-glass"
+        initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.8, ease: EASE }}
         style={{
           position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
+          top: "1.25rem",
+          left: "50%",
+          transform: "translateX(-50%)",
           zIndex: 9000,
-          padding: "1.5rem clamp(1.5rem, 5vw, 4rem)",
+          padding: "0.75rem 2rem",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
-          transition: "background 0.5s, backdrop-filter 0.5s",
+          gap: "2.5rem",
           background: scrolled
-            ? "rgba(45, 31, 26, 0.85)"
-            : "transparent",
-          backdropFilter: scrolled ? "blur(20px)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
-          borderBottom: scrolled
-            ? "1px solid rgba(232,25,26,0.12)"
-            : "none",
+            ? "rgba(45, 31, 26, 0.55)"
+            : "rgba(45, 31, 26, 0.35)",
+          backdropFilter: "blur(20px) saturate(180%) brightness(1.05)",
+          WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.05)",
+          border: "1px solid rgba(232, 25, 26, 0.25)",
+          borderRadius: "100px",
+          boxShadow: scrolled
+            ? "inset 0 1px 0 rgba(255,255,255,0.12), 0 8px 40px rgba(0,0,0,0.35), 0 2px 8px rgba(232,25,26,0.08)"
+            : "inset 0 1px 0 rgba(255,255,255,0.08), 0 8px 32px rgba(0,0,0,0.2)",
+          transition: "all 0.4s cubic-bezier(0.16,1,0.36,1)",
+          whiteSpace: "nowrap",
         }}
       >
         {/* Logo */}
