@@ -296,3 +296,18 @@ input[type="number"]::-webkit-outer-spin-button {
     justify-content: center;
   }
 }
+
+/* ─── FOOTER REVEAL — Effet de feuille soulevée ─── */
+
+/* Spacer — réserve l'espace du footer pour que le scroll le révèle */
+.footer-reveal-spacer {
+  height: var(--footer-height, 520px);
+  display: block;
+}
+
+/* Page content — ombre portée vers le bas pour l'effet "feuille soulevée" */
+.page-content {
+  background-color: var(--cream);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  min-height: 100vh;
+}

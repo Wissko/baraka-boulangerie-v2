@@ -43,8 +43,23 @@ export default function RootLayout({
     >
       <body className="grain">
         <Navigation />
-        {children}
-        <Footer />
+        {/* Contenu principal — au-dessus du footer (z-index supérieur) */}
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <div className="page-content">
+            {children}
+            <div className="footer-reveal-spacer" />
+          </div>
+        </div>
+        {/* Footer Reveal — fixé en bas, révélé au scroll comme sous une feuille */}
+        <div style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 0,
+        }}>
+          <Footer />
+        </div>
       </body>
     </html>
   );
