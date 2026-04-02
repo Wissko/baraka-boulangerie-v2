@@ -143,7 +143,7 @@ export default function CommandesSpeciales() {
       style={{
         background: "#FAF7F2",
         padding: "clamp(5rem, 12vw, 10rem) 0",
-        paddingTop: "clamp(5rem, 10vw, 8rem)",
+        paddingTop: "clamp(7rem, 12vw, 10rem)",
         overflow: "hidden",
       }}
     >

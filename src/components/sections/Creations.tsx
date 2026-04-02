@@ -179,7 +179,7 @@ export default function Creations() {
       className="mesh-dark"
       style={{
         padding: "clamp(5rem, 12vw, 10rem) clamp(1.5rem, 7vw, 5rem)",
-        paddingTop: "clamp(5rem, 10vw, 8rem)",
+        paddingTop: "clamp(7rem, 12vw, 10rem)",
         overflow: "hidden",
         position: "relative",
       }}

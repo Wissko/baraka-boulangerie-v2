@@ -38,7 +38,7 @@ export default function SavoirFaire() {
     <section
       id="savoir-faire"
       ref={sectionRef}
-      style={{ position: "relative", overflow: "hidden", background: "#2D1F1A", paddingTop: "clamp(5rem, 10vw, 8rem)" }}
+      style={{ position: "relative", overflow: "hidden", background: "#2D1F1A", paddingTop: "clamp(7rem, 12vw, 10rem)" }}
     >
       {/* ── Full-bleed image ── */}
       <div
@@ -57,11 +57,22 @@ export default function SavoirFaire() {
           sizes="100vw"
           style={{ objectFit: "cover", objectPosition: "center 30%" }}
         />
+        {/* Dark gradient */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(to bottom, rgba(45,31,26,0.2) 0%, rgba(45,31,26,0.85) 100%)",
+            background: "linear-gradient(to bottom, rgba(45,31,26,0.45) 0%, rgba(45,31,26,0.1) 35%, rgba(45,31,26,0.85) 100%)",
+          }}
+        />
+        {/* Glass blur overlay for readability */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backdropFilter: "blur(4px) saturate(140%)",
+            WebkitBackdropFilter: "blur(4px) saturate(140%)",
+            background: "linear-gradient(to bottom, rgba(45,31,26,0.35) 0%, rgba(45,31,26,0.15) 40%, rgba(45,31,26,0.6) 100%)",
           }}
         />
 

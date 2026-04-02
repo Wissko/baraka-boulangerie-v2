@@ -68,20 +68,7 @@ export default function Hero() {
         }}
       />
 
-      {/* ── Corner label top-right (EDGE™ corner gravity) ── */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 0.6 }}
-        style={{
-          position: "absolute",
-          top: "1.75rem",
-          right: "clamp(1.5rem, 5vw, 4rem)",
-          zIndex: 20,
-        }}
-      >
-        <p className="corner-label">Île-de-France</p>
-      </motion.div>
+      {/* Corner label removed — Île-de-France */}
 
       {/* ── Corner section number bottom-left (EDGE™) ── */}
       <motion.div
