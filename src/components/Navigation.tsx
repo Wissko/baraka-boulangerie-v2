@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
@@ -42,29 +43,24 @@ export default function Navigation() {
           justifyContent: "space-between",
           transition: "background 0.5s, backdrop-filter 0.5s",
           background: scrolled
-            ? "rgba(15, 12, 9, 0.85)"
+            ? "rgba(45, 31, 26, 0.85)"
             : "transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
           borderBottom: scrolled
-            ? "1px solid rgba(201,169,110,0.12)"
+            ? "1px solid rgba(232,25,26,0.12)"
             : "none",
         }}
       >
         {/* Logo */}
-        <Link
-          href="#hero"
-          style={{
-            fontFamily: "var(--font-cormorant)",
-            fontStyle: "italic",
-            fontSize: "1.25rem",
-            fontWeight: 400,
-            color: "#C9A96E",
-            letterSpacing: "0.12em",
-            textDecoration: "none",
-          }}
-        >
-          Baraka
+        <Link href="#hero" style={{ textDecoration: "none", display: "inline-block" }}>
+          <Image
+            src="/images/logo.jpg"
+            alt="Baraka Boulangeries"
+            width={48}
+            height={48}
+            style={{ borderRadius: "50%", objectFit: "cover" }}
+          />
         </Link>
 
         {/* Desktop links */}
@@ -91,7 +87,7 @@ export default function Navigation() {
                 transition: "color 0.3s",
               }}
               onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.color = "#C9A96E")
+                ((e.currentTarget as HTMLElement).style.color = "#E8191A")
               }
               onMouseLeave={(e) =>
                 ((e.currentTarget as HTMLElement).style.color =
@@ -123,13 +119,13 @@ export default function Navigation() {
               display: "block",
               width: 22,
               height: 1,
-              background: "#C9A96E",
+              background: "#E8191A",
               transformOrigin: "center",
             }}
           />
           <motion.span
             animate={{ opacity: open ? 0 : 1 }}
-            style={{ display: "block", width: 22, height: 1, background: "#C9A96E" }}
+            style={{ display: "block", width: 22, height: 1, background: "#E8191A" }}
           />
           <motion.span
             animate={{ rotate: open ? -45 : 0, y: open ? -7 : 0 }}
@@ -137,7 +133,7 @@ export default function Navigation() {
               display: "block",
               width: 22,
               height: 1,
-              background: "#C9A96E",
+              background: "#E8191A",
               transformOrigin: "center",
             }}
           />
@@ -156,7 +152,7 @@ export default function Navigation() {
               position: "fixed",
               inset: 0,
               zIndex: 8000,
-              background: "rgba(15, 12, 9, 0.97)",
+              background: "rgba(45, 31, 26, 0.97)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",

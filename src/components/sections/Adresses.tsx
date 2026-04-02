@@ -85,7 +85,7 @@ export default function Adresses() {
         }}
       >
         <span className="section-number">06</span>
-        <div style={{ height: 1, width: 40, background: "rgba(201,169,110,0.2)" }} />
+        <div style={{ height: 1, width: 40, background: "rgba(232,25,26,0.2)" }} />
         <p
           style={{
             fontFamily: "var(--font-dm-sans)",
@@ -93,7 +93,7 @@ export default function Adresses() {
             fontSize: "0.55rem",
             letterSpacing: "0.38em",
             textTransform: "uppercase",
-            color: "rgba(201,169,110,0.5)",
+            color: "rgba(232,25,26,0.5)",
           }}
         >
           Nos adresses
@@ -101,7 +101,7 @@ export default function Adresses() {
 
         {/* Corner label top-right — EDGE */}
         <div style={{ marginLeft: "auto" }}>
-          <p className="corner-label" style={{ color: "rgba(201,169,110,0.4)" }}>
+          <p className="corner-label" style={{ color: "rgba(232,25,26,0.4)" }}>
             Île-de-France
           </p>
         </div>
@@ -127,7 +127,7 @@ export default function Adresses() {
       >
         5 boutiques,
         <br />
-        <span style={{ color: "#C9A96E" }}>une seule passion</span>
+        <span style={{ color: "#E8191A" }}>une seule passion</span>
       </motion.h2>
 
       {/* Boutiques list */}
@@ -142,7 +142,7 @@ export default function Adresses() {
               transition={{ delay: 0.15 + i * 0.08, duration: 0.7, ease: EASE }}
               onClick={() => setActiveId(isActive ? null : b.id)}
               style={{
-                borderTop: "1px solid rgba(201,169,110,0.12)",
+                borderTop: "1px solid rgba(232,25,26,0.12)",
                 padding: "clamp(1.25rem, 3vw, 2rem) 0",
                 cursor: "pointer",
                 transition: "background 0.3s",
@@ -163,7 +163,7 @@ export default function Adresses() {
                     fontStyle: "italic",
                     fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
                     fontWeight: 300,
-                    color: isActive ? "#C9A96E" : "rgba(201,169,110,0.25)",
+                    color: isActive ? "#E8191A" : "rgba(232,25,26,0.25)",
                     lineHeight: 1,
                     letterSpacing: "-0.02em",
                     transition: "color 0.3s",
@@ -196,8 +196,8 @@ export default function Adresses() {
                           fontSize: "0.48rem",
                           letterSpacing: "0.25em",
                           textTransform: "uppercase",
-                          color: "#C9A96E",
-                          border: "1px solid rgba(201,169,110,0.4)",
+                          color: "#E8191A",
+                          border: "1px solid rgba(232,25,26,0.4)",
                           padding: "0.3rem 0.7rem",
                         }}
                       >
@@ -214,7 +214,7 @@ export default function Adresses() {
                   >
                     <div style={{ paddingTop: "0.75rem", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                        <MapPin size={12} color="#C9A96E" strokeWidth={1} />
+                        <MapPin size={12} color="#E8191A" strokeWidth={1} />
                         <p
                           style={{
                             fontFamily: "var(--font-dm-sans)",
@@ -227,7 +227,7 @@ export default function Adresses() {
                         </p>
                       </div>
                       <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                        <Clock size={12} color="#C9A96E" strokeWidth={1} />
+                        <Clock size={12} color="#E8191A" strokeWidth={1} />
                         <p
                           style={{
                             fontFamily: "var(--font-dm-sans)",
@@ -258,7 +258,7 @@ export default function Adresses() {
                     fontSize: "0.52rem",
                     letterSpacing: "0.22em",
                     textTransform: "uppercase",
-                    color: isActive ? "#C9A96E" : "rgba(201,169,110,0.3)",
+                    color: isActive ? "#E8191A" : "rgba(232,25,26,0.3)",
                     textDecoration: "none",
                     transition: "color 0.3s",
                     flexShrink: 0,
@@ -271,7 +271,7 @@ export default function Adresses() {
             </motion.div>
           );
         })}
-        <div style={{ borderTop: "1px solid rgba(201,169,110,0.12)" }} />
+        <div style={{ borderTop: "1px solid rgba(232,25,26,0.12)" }} />
       </div>
     </section>
   );

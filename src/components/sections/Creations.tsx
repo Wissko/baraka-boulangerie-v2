@@ -128,7 +128,7 @@ function GlassCard({ item, index }: { item: typeof creations[0]; index: number }
       <div
         style={{
           padding: "1.25rem 0 0",
-          borderTop: "1px solid rgba(201,169,110,0.2)",
+          borderTop: "1px solid rgba(232,25,26,0.2)",
           marginTop: "0",
           display: "flex",
           justifyContent: "space-between",
@@ -156,7 +156,7 @@ function GlassCard({ item, index }: { item: typeof creations[0]; index: number }
             fontSize: "0.5rem",
             letterSpacing: "0.28em",
             textTransform: "uppercase",
-            color: "#C9A96E",
+            color: "#E8191A",
             flexShrink: 0,
             marginLeft: "1rem",
           }}
@@ -199,7 +199,7 @@ export default function Creations() {
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
             <span className="section-number">03</span>
-            <div style={{ width: 40, height: 1, background: "rgba(201,169,110,0.3)" }} />
+            <div style={{ width: 40, height: 1, background: "rgba(232,25,26,0.3)" }} />
             <p
               style={{
                 fontFamily: "var(--font-dm-sans)",
@@ -207,7 +207,7 @@ export default function Creations() {
                 fontSize: "0.55rem",
                 letterSpacing: "0.38em",
                 textTransform: "uppercase",
-                color: "rgba(201,169,110,0.6)",
+                color: "rgba(232,25,26,0.6)",
               }}
             >
               Nos créations
@@ -231,7 +231,7 @@ export default function Creations() {
           >
             L'excellence
             <br />
-            <span style={{ color: "#C9A96E" }}>au quotidien</span>
+            <span style={{ color: "#E8191A" }}>au quotidien</span>
           </motion.h2>
         </div>
 
@@ -245,7 +245,7 @@ export default function Creations() {
             fontStyle: "italic",
             fontSize: "clamp(6rem, 18vw, 16rem)",
             fontWeight: 300,
-            color: "rgba(201,169,110,0.06)",
+            color: "rgba(232,25,26,0.06)",
             lineHeight: 1,
             letterSpacing: "-0.05em",
             position: "absolute",

@@ -8,8 +8,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "#0F0C09",
-        borderTop: "1px solid rgba(201,169,110,0.12)",
+        background: "#2D1F1A",
+        borderTop: "1px solid rgba(232,25,26,0.12)",
         padding: "clamp(3rem, 7vw, 5rem) clamp(1.5rem, 7vw, 5rem)",
       }}
     >
@@ -46,7 +46,7 @@ export default function Footer() {
               fontSize: "0.62rem",
               letterSpacing: "0.28em",
               textTransform: "uppercase",
-              color: "rgba(201,169,110,0.5)",
+              color: "rgba(232,25,26,0.5)",
             }}
           >
             L'art de la boulangerie française depuis 2010
@@ -82,7 +82,7 @@ export default function Footer() {
                 transition: "color 0.3s",
               }}
               onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.color = "#C9A96E")
+                ((e.currentTarget as HTMLElement).style.color = "#E8191A")
               }
               onMouseLeave={(e) =>
                 ((e.currentTarget as HTMLElement).style.color =
@@ -100,7 +100,7 @@ export default function Footer() {
         style={{
           maxWidth: 1400,
           margin: "3rem auto 0",
-          borderTop: "1px solid rgba(201,169,110,0.08)",
+          borderTop: "1px solid rgba(232,25,26,0.08)",
           paddingTop: "2rem",
           display: "flex",
           justifyContent: "space-between",
@@ -127,7 +127,7 @@ export default function Footer() {
             fontStyle: "italic",
             fontSize: "0.9rem",
             fontWeight: 300,
-            color: "rgba(201,169,110,0.3)",
+            color: "rgba(232,25,26,0.3)",
             letterSpacing: "0.04em",
           }}
         >

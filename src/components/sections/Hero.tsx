@@ -26,7 +26,7 @@ export default function Hero() {
         height: "100svh",
         minHeight: 700,
         overflow: "hidden",
-        background: "#0F0C09",
+        background: "#2D1F1A",
       }}
       aria-label="Baraka Boulangeries hero"
     >
@@ -45,13 +45,14 @@ export default function Hero() {
           sizes="100vw"
           style={{ objectFit: "cover", objectPosition: "center" }}
         />
-        {/* Gradient overlay */}
+        {/* Overlay gradient luxueux — flou et profondeur */}
         <div
           style={{
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(160deg, rgba(15,12,9,0.5) 0%, rgba(15,12,9,0.15) 40%, rgba(15,12,9,0.82) 100%)",
+              "linear-gradient(to bottom, rgba(45,31,26,0.45) 0%, rgba(45,31,26,0.1) 35%, rgba(45,31,26,0.72) 100%)",
+            backdropFilter: "blur(0px)",
           }}
         />
       </motion.div>
@@ -97,7 +98,7 @@ export default function Hero() {
           left: 0,
           right: 0,
           height: "1px",
-          background: "linear-gradient(90deg, #C9A96E 0%, rgba(201,169,110,0.3) 70%, transparent 100%)",
+          background: "linear-gradient(90deg, #E8191A 0%, rgba(232,25,26,0.3) 70%, transparent 100%)",
           transformOrigin: "left",
           zIndex: 20,
         }}
@@ -116,100 +117,118 @@ export default function Hero() {
             maxWidth: "90vw",
           }}
         >
-          {/* Label */}
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.7, ease: EASE }}
-            style={{
-              fontFamily: "var(--font-dm-sans)",
-              fontWeight: 300,
-              fontSize: "0.6rem",
-              letterSpacing: "0.38em",
-              textTransform: "uppercase",
-              color: "#C9A96E",
-              marginBottom: "1.25rem",
-            }}
-          >
-            Maison artisanale depuis 2010
-          </motion.p>
-
-          {/* EDGE™ Bleeding title — clip-path reveal line 1 */}
-          <div style={{ overflow: "hidden" }}>
-            <motion.h1
-              initial={{ clipPath: "inset(0 0 100% 0)" }}
-              animate={{ clipPath: "inset(0 0 0% 0)" }}
-              transition={{ delay: 0.65, duration: 1, ease: EASE }}
-              className="edge-title"
-              style={{
-                fontFamily: "var(--font-cormorant)",
-                fontWeight: 300,
-                color: "#FAF7F2",
-                lineHeight: 0.88,
-                textAlign: "left",
-                willChange: "transform, opacity",
-              }}
-            >
-              Baraka
-            </motion.h1>
-          </div>
-
-          {/* Line 2 — italic offset */}
-          <div style={{ overflow: "hidden" }}>
-            <motion.p
-              initial={{ clipPath: "inset(0 0 100% 0)" }}
-              animate={{ clipPath: "inset(0 0 0% 0)" }}
-              transition={{ delay: 0.85, duration: 1, ease: EASE }}
-              style={{
-                fontFamily: "var(--font-cormorant)",
-                fontStyle: "italic",
-                fontSize: "clamp(1.5rem, 4vw, 3.5rem)",
-                fontWeight: 300,
-                color: "rgba(201,169,110,0.85)",
-                letterSpacing: "0.02em",
-                lineHeight: 1.1,
-                marginLeft: "clamp(0rem, 2vw, 3rem)",
-                willChange: "transform, opacity",
-              }}
-            >
-              Boulangeries
-            </motion.p>
-          </div>
-
-          {/* Sous-titre */}
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.05, duration: 0.8, ease: EASE }}
-            style={{
-              fontFamily: "var(--font-dm-sans)",
-              fontWeight: 300,
-              fontSize: "clamp(0.78rem, 1.5vw, 0.95rem)",
-              color: "rgba(250,247,242,0.5)",
-              marginTop: "1.5rem",
-              maxWidth: "460px",
-              lineHeight: 1.8,
-              letterSpacing: "0.02em",
-            }}
-          >
-            L'art de la boulangerie française : croissants, pains au levain,
-            viennoiseries et pâtisseries d'exception. 5 boutiques en Île-de-France.
-          </motion.p>
-
-          {/* CTA — pop animation + pulse */}
+          {/* Glass luxueux — conteneur texte hero */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.25, duration: 0.6, type: "spring", stiffness: 280 }}
-            style={{ marginTop: "2.5rem", display: "inline-block" }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.9, ease: EASE }}
+            style={{
+              background: "rgba(45, 31, 26, 0.35)",
+              backdropFilter: "blur(18px) saturate(160%)",
+              WebkitBackdropFilter: "blur(18px) saturate(160%)",
+              border: "1px solid rgba(232, 25, 26, 0.15)",
+              borderRadius: "2px",
+              padding: "clamp(2rem, 4vw, 3.5rem) clamp(2rem, 5vw, 4rem)",
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.35)",
+              display: "inline-block",
+              maxWidth: "700px",
+            }}
           >
-            <a
-              href="#commandes"
-              id="cta-magnetic"
-              className="btn-glass"
+            {/* Label */}
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.7, ease: EASE }}
+              style={{
+                fontFamily: "var(--font-dm-sans)",
+                fontWeight: 300,
+                fontSize: "0.6rem",
+                letterSpacing: "0.38em",
+                textTransform: "uppercase",
+                color: "#E8191A",
+                marginBottom: "1.25rem",
+              }}
             >
-              Commander sur mesure
-            </a>
+              Maison artisanale depuis 2010
+            </motion.p>
+
+            {/* EDGE™ Bleeding title — clip-path reveal line 1 */}
+            <div style={{ overflow: "hidden" }}>
+              <motion.h1
+                initial={{ clipPath: "inset(0 0 100% 0)" }}
+                animate={{ clipPath: "inset(0 0 0% 0)" }}
+                transition={{ delay: 0.65, duration: 1, ease: EASE }}
+                className="edge-title"
+                style={{
+                  fontFamily: "var(--font-cormorant)",
+                  fontWeight: 300,
+                  color: "#FAF7F2",
+                  lineHeight: 0.88,
+                  textAlign: "left",
+                  willChange: "transform, opacity",
+                }}
+              >
+                Baraka
+              </motion.h1>
+            </div>
+
+            {/* Line 2 — italic offset */}
+            <div style={{ overflow: "hidden" }}>
+              <motion.p
+                initial={{ clipPath: "inset(0 0 100% 0)" }}
+                animate={{ clipPath: "inset(0 0 0% 0)" }}
+                transition={{ delay: 0.85, duration: 1, ease: EASE }}
+                style={{
+                  fontFamily: "var(--font-cormorant)",
+                  fontStyle: "italic",
+                  fontSize: "clamp(1.5rem, 4vw, 3.5rem)",
+                  fontWeight: 300,
+                  color: "rgba(232,25,26,0.85)",
+                  letterSpacing: "0.02em",
+                  lineHeight: 1.1,
+                  marginLeft: "clamp(0rem, 2vw, 3rem)",
+                  willChange: "transform, opacity",
+                }}
+              >
+                Boulangeries
+              </motion.p>
+            </div>
+
+            {/* Sous-titre */}
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.05, duration: 0.8, ease: EASE }}
+              style={{
+                fontFamily: "var(--font-dm-sans)",
+                fontWeight: 300,
+                fontSize: "clamp(0.78rem, 1.5vw, 0.95rem)",
+                color: "rgba(250,247,242,0.5)",
+                marginTop: "1.5rem",
+                maxWidth: "460px",
+                lineHeight: 1.8,
+                letterSpacing: "0.02em",
+              }}
+            >
+              L'art de la boulangerie française : croissants, pains au levain,
+              viennoiseries et pâtisseries d'exception. 5 boutiques en Île-de-France.
+            </motion.p>
+
+            {/* CTA — pop animation + pulse */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.25, duration: 0.6, type: "spring", stiffness: 280 }}
+              style={{ marginTop: "2.5rem", display: "inline-block" }}
+            >
+              <a
+                href="#commandes"
+                id="cta-magnetic"
+                className="btn-glass"
+              >
+                Commander sur mesure
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </motion.div>
@@ -234,7 +253,7 @@ export default function Hero() {
           animate={{ y: [0, 7, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <div style={{ width: 1, height: 28, background: "rgba(201,169,110,0.4)" }} />
+          <div style={{ width: 1, height: 28, background: "rgba(232,25,26,0.4)" }} />
         </motion.div>
       </motion.div>
     </section>

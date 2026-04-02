@@ -38,7 +38,7 @@ export default function SavoirFaire() {
     <section
       id="savoir-faire"
       ref={sectionRef}
-      style={{ position: "relative", overflow: "hidden", background: "#0F0C09" }}
+      style={{ position: "relative", overflow: "hidden", background: "#2D1F1A" }}
     >
       {/* ── Full-bleed image ── */}
       <div
@@ -61,7 +61,7 @@ export default function SavoirFaire() {
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(to bottom, rgba(15,12,9,0.2) 0%, rgba(15,12,9,0.85) 100%)",
+            background: "linear-gradient(to bottom, rgba(45,31,26,0.2) 0%, rgba(45,31,26,0.85) 100%)",
           }}
         />
 
@@ -81,7 +81,7 @@ export default function SavoirFaire() {
           {/* EDGE™ section number top corner */}
           <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
             <span className="section-number">05</span>
-            <div style={{ width: 40, height: 1, background: "rgba(201,169,110,0.3)" }} />
+            <div style={{ width: 40, height: 1, background: "rgba(232,25,26,0.3)" }} />
             <p
               style={{
                 fontFamily: "var(--font-dm-sans)",
@@ -89,7 +89,7 @@ export default function SavoirFaire() {
                 fontSize: "0.55rem",
                 letterSpacing: "0.38em",
                 textTransform: "uppercase",
-                color: "rgba(201,169,110,0.5)",
+                color: "rgba(232,25,26,0.5)",
               }}
             >
               Savoir-faire
@@ -109,7 +109,7 @@ export default function SavoirFaire() {
             }}
           >
             "Le bon pain n'est pas fait — il est{" "}
-            <em style={{ color: "#C9A96E" }}>cultivé</em>."
+            <em style={{ color: "#E8191A" }}>cultivé</em>."
           </blockquote>
 
           <p
@@ -147,7 +147,7 @@ export default function SavoirFaire() {
               transition={{ delay: 0.3 + i * 0.1, duration: 0.7, ease: EASE }}
               style={{
                 padding: "2.5rem",
-                borderLeft: "1px solid rgba(201,169,110,0.12)",
+                borderLeft: "1px solid rgba(232,25,26,0.12)",
                 position: "relative",
                 willChange: "transform, opacity",
               }}
@@ -163,14 +163,14 @@ export default function SavoirFaire() {
                   left: 0,
                   right: 0,
                   height: 1,
-                  background: "#C9A96E",
+                  background: "#E8191A",
                   transformOrigin: "left",
                 }}
               />
 
               <Icon
                 size={20}
-                color="#C9A96E"
+                color="#E8191A"
                 strokeWidth={1}
                 style={{ marginBottom: "1.5rem", display: "block" }}
               />

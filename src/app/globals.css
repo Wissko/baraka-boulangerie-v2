@@ -3,17 +3,17 @@
 /* ─── BARAKA V2 — DESIGN TOKENS ─── */
 :root {
   /* Palette artisanale premium */
-  --gold: #C9A96E;
-  --gold-light: #E0C48A;
-  --gold-dark: #A8833C;
+  --gold: #E8191A;
+  --gold-light: #FF3A3B;
+  --gold-dark: #C41010;
   --caramel: #8B5E3C;
-  --ink: #1A1410;
-  --ink-soft: rgba(26, 20, 16, 0.65);
-  --ink-muted: rgba(26, 20, 16, 0.35);
+  --ink: #1A1A1A;
+  --ink-soft: rgba(26, 26, 26, 0.65);
+  --ink-muted: rgba(26, 26, 26, 0.35);
   --cream: #FAF7F2;
   --cream-dark: #F2EDE4;
-  --dark-bg: #0F0C09;
-  --dark-card: rgba(26, 20, 16, 0.6);
+  --dark-bg: #2D1F1A;
+  --dark-card: rgba(26, 26, 26, 0.6);
 
   /* Spacing system */
   --space-1: 0.25rem;
@@ -97,17 +97,17 @@ body {
 
 /* ─── LIQUID GLASS BUTTON ─── */
 .btn-glass {
-  background: rgba(201, 169, 110, 0.12);
+  background: rgba(232, 25, 26, 0.1);
   backdrop-filter: blur(20px) saturate(180%) brightness(1.1);
   -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.1);
-  border: 1px solid rgba(201, 169, 110, 0.35);
+  border: 1px solid rgba(232, 25, 26, 0.3);
   border-radius: 100px;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
     inset 0 -1px 0 rgba(0, 0, 0, 0.08),
-    0 8px 32px rgba(201, 169, 110, 0.15),
+    0 8px 32px rgba(232, 25, 26, 0.12),
     0 2px 8px rgba(0, 0, 0, 0.12);
-  color: #C9A96E;
+  color: #E8191A;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   font-family: DM Sans, sans-serif;
@@ -134,14 +134,14 @@ body {
 }
 
 .btn-glass:hover {
-  background: rgba(201, 169, 110, 0.22);
-  border-color: rgba(201, 169, 110, 0.6);
+  background: rgba(232, 25, 26, 0.2);
+  border-color: rgba(232, 25, 26, 0.55);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    0 12px 40px rgba(201, 169, 110, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 12px 40px rgba(232, 25, 26, 0.2),
     0 2px 8px rgba(0, 0, 0, 0.15);
   transform: translateY(-1px);
-  color: #C9A96E;
+  color: #E8191A;
 }
 
 /* ─── MESH DRIFT ─── */
@@ -188,11 +188,11 @@ body {
 /* ─── GLASS CARD ─── */
 .glass-dark {
   background: rgba(10, 8, 5, 0.55);
-  border: 1px solid rgba(201, 169, 110, 0.12);
+  border: 1px solid rgba(232, 25, 26, 0.12);
   backdrop-filter: blur(28px) saturate(150%);
   -webkit-backdrop-filter: blur(28px) saturate(150%);
   box-shadow:
-    inset 0 1px 0 rgba(201, 169, 110, 0.1),
+    inset 0 1px 0 rgba(232, 25, 26, 0.1),
     0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
@@ -203,7 +203,7 @@ body {
   background: linear-gradient(
     105deg,
     transparent 40%,
-    rgba(201, 169, 110, 0.04) 50%,
+    rgba(232, 25, 26, 0.04) 50%,
     transparent 60%
   );
   background-size: 200% 100%;
@@ -248,7 +248,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 input::placeholder,
 textarea::placeholder {
-  color: rgba(26, 20, 16, 0.22);
+  color: rgba(26, 26, 26, 0.22);
   font-weight: 300;
 }
 input[type="number"]::-webkit-inner-spin-button,

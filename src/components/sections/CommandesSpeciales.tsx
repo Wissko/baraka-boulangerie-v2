@@ -131,8 +131,8 @@ export default function CommandesSpeciales() {
   function borderStyle(field: string, hasError = false): React.CSSProperties {
     const isFocused = focused === field;
     return {
-      borderBottom: `1px solid ${hasError ? "#C41E3A" : isFocused ? "#C9A96E" : "rgba(250,247,242,0.15)"}`,
-      boxShadow: isFocused ? "0 1px 0 0 rgba(201,169,110,0.3)" : "none",
+      borderBottom: `1px solid ${hasError ? "#C41E3A" : isFocused ? "#E8191A" : "rgba(250,247,242,0.15)"}`,
+      boxShadow: isFocused ? "0 1px 0 0 rgba(232,25,26,0.3)" : "none",
       transition: "border-color 0.4s, box-shadow 0.4s",
     };
   }
@@ -160,7 +160,7 @@ export default function CommandesSpeciales() {
           }}
         >
           <span className="section-number">04</span>
-          <div style={{ height: 1, width: 40, background: "rgba(26,20,16,0.15)" }} />
+          <div style={{ height: 1, width: 40, background: "rgba(26,26,26,0.15)" }} />
           <p
             style={{
               fontFamily: "var(--font-dm-sans)",
@@ -204,7 +204,7 @@ export default function CommandesSpeciales() {
             >
               Sur mesure,
               <br />
-              <span style={{ color: "#C9A96E" }}>pour vous</span>
+              <span style={{ color: "#E8191A" }}>pour vous</span>
             </h2>
 
             <p
@@ -225,15 +225,15 @@ export default function CommandesSpeciales() {
             {/* 14 days notice */}
             <div
               style={{
-                border: "1px solid rgba(201,169,110,0.4)",
-                background: "rgba(201,169,110,0.04)",
+                border: "1px solid rgba(232,25,26,0.4)",
+                background: "rgba(232,25,26,0.04)",
                 padding: "1.25rem 1.5rem",
                 display: "flex",
                 gap: "1rem",
                 alignItems: "flex-start",
               }}
             >
-              <Clock size={15} color="#C9A96E" strokeWidth={1} style={{ flexShrink: 0, marginTop: 2 }} />
+              <Clock size={15} color="#E8191A" strokeWidth={1} style={{ flexShrink: 0, marginTop: 2 }} />
               <div>
                 <p
                   style={{
@@ -242,7 +242,7 @@ export default function CommandesSpeciales() {
                     fontSize: "0.55rem",
                     letterSpacing: "0.3em",
                     textTransform: "uppercase",
-                    color: "#C9A96E",
+                    color: "#E8191A",
                     marginBottom: "0.4rem",
                   }}
                 >
@@ -288,7 +288,7 @@ export default function CommandesSpeciales() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.25, duration: 0.9, ease: EASE }}
             style={{
-              background: "#1A1410",
+              background: "#1A1A1A",
               padding: "clamp(2rem, 5vw, 4rem)",
             }}
           >
@@ -302,7 +302,7 @@ export default function CommandesSpeciales() {
                   transition={{ ease: EASE, duration: 0.7 }}
                   style={{ textAlign: "center", padding: "3rem 1rem" }}
                 >
-                  <CheckCircle size={52} color="#C9A96E" strokeWidth={0.8} style={{ margin: "0 auto 2rem", display: "block" }} />
+                  <CheckCircle size={52} color="#E8191A" strokeWidth={0.8} style={{ margin: "0 auto 2rem", display: "block" }} />
                   <h3
                     style={{
                       fontFamily: "var(--font-cormorant)",
@@ -345,7 +345,7 @@ export default function CommandesSpeciales() {
                           position: "absolute",
                           top: 0, left: 0, right: 0,
                           height: 1,
-                          background: "#C9A96E",
+                          background: "#E8191A",
                           transformOrigin: "left",
                         }}
                       />
@@ -359,8 +359,8 @@ export default function CommandesSpeciales() {
                 {/* Section 01 */}
                 <div style={{ marginBottom: "3.5rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
-                    <span style={{ ...labelStyle as object, fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontSize: "1rem", color: "#C9A96E", fontWeight: 400, marginBottom: 0, letterSpacing: "0.05em" }}>01</span>
-                    <div style={{ flex: 1, height: 1, background: "rgba(201,169,110,0.15)" }} />
+                    <span style={{ ...labelStyle as object, fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontSize: "1rem", color: "#E8191A", fontWeight: 400, marginBottom: 0, letterSpacing: "0.05em" }}>01</span>
+                    <div style={{ flex: 1, height: 1, background: "rgba(232,25,26,0.15)" }} />
                     <span style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 300, fontSize: "0.52rem", letterSpacing: "0.3em", textTransform: "uppercase", color: "rgba(250,247,242,0.3)" }}>Votre création</span>
                   </div>
 
@@ -377,15 +377,15 @@ export default function CommandesSpeciales() {
                               alignItems: "center",
                               gap: "1rem",
                               padding: "0.85rem 1.25rem",
-                              border: `1px solid ${selected ? "#C9A96E" : "rgba(250,247,242,0.08)"}`,
-                              background: selected ? "rgba(201,169,110,0.07)" : "transparent",
+                              border: `1px solid ${selected ? "#E8191A" : "rgba(250,247,242,0.08)"}`,
+                              background: selected ? "rgba(232,25,26,0.07)" : "transparent",
                               cursor: "pointer",
                               transition: "border-color 0.3s, background 0.3s",
                             }}>
                               <div style={{
                                 width: 12, height: 12, borderRadius: "50%",
-                                border: `1px solid ${selected ? "#C9A96E" : "rgba(250,247,242,0.2)"}`,
-                                background: selected ? "#C9A96E" : "transparent",
+                                border: `1px solid ${selected ? "#E8191A" : "rgba(250,247,242,0.2)"}`,
+                                background: selected ? "#E8191A" : "transparent",
                                 flexShrink: 0, transition: "all 0.25s",
                               }} />
                               <input type="radio" name="type" value={t} checked={selected} onChange={() => setType(t)} style={{ display: "none" }} />
@@ -400,7 +400,7 @@ export default function CommandesSpeciales() {
 
                     {/* Date */}
                     <div>
-                      <label style={{ ...labelStyle, color: focused === "date" ? "#C9A96E" : dateError ? "#C41E3A" : "rgba(250,247,242,0.35)" }}>Date souhaitée</label>
+                      <label style={{ ...labelStyle, color: focused === "date" ? "#E8191A" : dateError ? "#C41E3A" : "rgba(250,247,242,0.35)" }}>Date souhaitée</label>
                       <div style={borderStyle("date", dateError)}>
                         <input type="date" required min={getMinDate()} value={date}
                           onChange={(e) => handleDateChange(e.target.value)}
@@ -412,7 +412,7 @@ export default function CommandesSpeciales() {
 
                     {/* Personnes */}
                     <div>
-                      <label style={{ ...labelStyle, color: focused === "personnes" ? "#C9A96E" : "rgba(250,247,242,0.35)" }}>Nombre de personnes</label>
+                      <label style={{ ...labelStyle, color: focused === "personnes" ? "#E8191A" : "rgba(250,247,242,0.35)" }}>Nombre de personnes</label>
                       <div style={borderStyle("personnes")}>
                         <input type="number" min={10} required placeholder="Minimum 10" value={personnes}
                           onChange={(e) => setPersonnes(e.target.value)}
@@ -424,18 +424,18 @@ export default function CommandesSpeciales() {
                 </div>
 
                 {/* Divider */}
-                <div style={{ height: 1, background: "linear-gradient(90deg, rgba(201,169,110,0.4) 0%, transparent 100%)", marginBottom: "3.5rem" }} />
+                <div style={{ height: 1, background: "linear-gradient(90deg, rgba(232,25,26,0.4) 0%, transparent 100%)", marginBottom: "3.5rem" }} />
 
                 {/* Section 02 */}
                 <div style={{ marginBottom: "3.5rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
-                    <span style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontSize: "1rem", color: "#C9A96E" }}>02</span>
-                    <div style={{ flex: 1, height: 1, background: "rgba(201,169,110,0.15)" }} />
+                    <span style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontSize: "1rem", color: "#E8191A" }}>02</span>
+                    <div style={{ flex: 1, height: 1, background: "rgba(232,25,26,0.15)" }} />
                     <span style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 300, fontSize: "0.52rem", letterSpacing: "0.3em", textTransform: "uppercase", color: "rgba(250,247,242,0.3)" }}>Votre vision</span>
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
                     <div>
-                      <label style={{ ...labelStyle, color: focused === "description" ? "#C9A96E" : "rgba(250,247,242,0.35)" }}>Description et vision</label>
+                      <label style={{ ...labelStyle, color: focused === "description" ? "#E8191A" : "rgba(250,247,242,0.35)" }}>Description et vision</label>
                       <div style={borderStyle("description")}>
                         <textarea required rows={4} placeholder="Ex : Gâteau à étages, fleurs en sucre, couleurs ivoire et or..." value={description}
                           onChange={(e) => setDescription(e.target.value)}
@@ -444,7 +444,7 @@ export default function CommandesSpeciales() {
                       </div>
                     </div>
                     <div>
-                      <label style={{ ...labelStyle, color: focused === "allergies" ? "#C9A96E" : "rgba(250,247,242,0.35)" }}>
+                      <label style={{ ...labelStyle, color: focused === "allergies" ? "#E8191A" : "rgba(250,247,242,0.35)" }}>
                         Allergies <span style={{ fontWeight: 300, fontSize: "0.5rem", letterSpacing: "0.1em", color: "rgba(250,247,242,0.2)", marginLeft: "0.5rem", textTransform: "none" }}>Facultatif</span>
                       </label>
                       <div style={borderStyle("allergies")}>
@@ -458,20 +458,20 @@ export default function CommandesSpeciales() {
                 </div>
 
                 {/* Divider */}
-                <div style={{ height: 1, background: "linear-gradient(90deg, rgba(201,169,110,0.4) 0%, transparent 100%)", marginBottom: "3.5rem" }} />
+                <div style={{ height: 1, background: "linear-gradient(90deg, rgba(232,25,26,0.4) 0%, transparent 100%)", marginBottom: "3.5rem" }} />
 
                 {/* Section 03 */}
                 <div style={{ marginBottom: "3rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
-                    <span style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontSize: "1rem", color: "#C9A96E" }}>03</span>
-                    <div style={{ flex: 1, height: 1, background: "rgba(201,169,110,0.15)" }} />
+                    <span style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontSize: "1rem", color: "#E8191A" }}>03</span>
+                    <div style={{ flex: 1, height: 1, background: "rgba(232,25,26,0.15)" }} />
                     <span style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 300, fontSize: "0.52rem", letterSpacing: "0.3em", textTransform: "uppercase", color: "rgba(250,247,242,0.3)" }}>Coordonnées</span>
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
                       {[["prenom", "Prénom", prenom, setPrenom], ["nom", "Nom", nom, setNom]].map(([field, lbl, val, setter]) => (
                         <div key={field as string}>
-                          <label style={{ ...labelStyle, color: focused === field ? "#C9A96E" : "rgba(250,247,242,0.35)" }}>{lbl as string}</label>
+                          <label style={{ ...labelStyle, color: focused === field ? "#E8191A" : "rgba(250,247,242,0.35)" }}>{lbl as string}</label>
                           <div style={borderStyle(field as string)}>
                             <input type="text" required value={val as string}
                               onChange={(e) => (setter as (v: string) => void)(e.target.value)}
@@ -483,7 +483,7 @@ export default function CommandesSpeciales() {
                     </div>
                     {[["email", "Email", "email", email, setEmail], ["telephone", "Téléphone", "tel", telephone, setTelephone]].map(([field, lbl, type_, val, setter]) => (
                       <div key={field as string}>
-                        <label style={{ ...labelStyle, color: focused === field ? "#C9A96E" : "rgba(250,247,242,0.35)" }}>{lbl as string}</label>
+                        <label style={{ ...labelStyle, color: focused === field ? "#E8191A" : "rgba(250,247,242,0.35)" }}>{lbl as string}</label>
                         <div style={borderStyle(field as string)}>
                           <input type={type_ as string} required value={val as string}
                             onChange={(e) => (setter as (v: string) => void)(e.target.value)}
@@ -517,7 +517,7 @@ export default function CommandesSpeciales() {
                   >
                     {loading ? (
                       <>
-                        <span style={{ display: "inline-block", width: 10, height: 10, border: "1px solid rgba(201,169,110,0.3)", borderTopColor: "#C9A96E", borderRadius: "50%", animation: "spin 0.7s linear infinite" }} />
+                        <span style={{ display: "inline-block", width: 10, height: 10, border: "1px solid rgba(232,25,26,0.3)", borderTopColor: "#E8191A", borderRadius: "50%", animation: "spin 0.7s linear infinite" }} />
                         Envoi en cours
                       </>
                     ) : "Envoyer ma demande"}

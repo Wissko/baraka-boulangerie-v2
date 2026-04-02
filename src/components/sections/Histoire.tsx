@@ -124,7 +124,7 @@ export default function Histoire() {
                   fontStyle: "italic",
                   fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
                   fontWeight: 300,
-                  color: "#C9A96E",
+                  color: "#E8191A",
                   lineHeight: 1,
                   letterSpacing: "-0.02em",
                 }}
@@ -215,7 +215,7 @@ export default function Histoire() {
               }}
             >
               L'artisanat comme{" "}
-              <span style={{ color: "#C9A96E" }}>philosophie</span>
+              <span style={{ color: "#E8191A" }}>philosophie</span>
             </h2>
 
             <p
