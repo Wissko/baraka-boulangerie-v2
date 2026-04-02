@@ -229,6 +229,7 @@ export default function CommandesSpeciales() {
               style={{
                 border: "1px solid rgba(232,25,26,0.4)",
                 background: "rgba(232,25,26,0.04)",
+                borderRadius: "14px",
                 padding: "1.25rem 1.5rem",
                 display: "flex",
                 gap: "1rem",
@@ -291,6 +292,7 @@ export default function CommandesSpeciales() {
             transition={{ delay: 0.25, duration: 0.9, ease: EASE }}
             style={{
               background: "#1A1A1A",
+              borderRadius: "20px",
               padding: "clamp(2rem, 5vw, 4rem)",
             }}
           >
