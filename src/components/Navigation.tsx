@@ -55,7 +55,7 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="#hero" style={{ textDecoration: "none", display: "inline-block" }}>
           <Image
-            src="/images/logo.jpg"
+            src="/images/Design sans titre.svg"
             alt="Baraka Boulangeries"
             width={48}
             height={48}

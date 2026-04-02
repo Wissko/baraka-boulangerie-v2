@@ -45,17 +45,28 @@ export default function Hero() {
           sizes="100vw"
           style={{ objectFit: "cover", objectPosition: "center" }}
         />
-        {/* Overlay gradient luxueux — flou et profondeur */}
+        {/* Overlay gradient luxueux — profondeur */}
         <div
           style={{
             position: "absolute",
             inset: 0,
             background:
               "linear-gradient(to bottom, rgba(45,31,26,0.45) 0%, rgba(45,31,26,0.1) 35%, rgba(45,31,26,0.72) 100%)",
-            backdropFilter: "blur(0px)",
           }}
         />
       </motion.div>
+
+      {/* Glass overlay plein écran — luxueux, opaque juste ce qu'il faut */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backdropFilter: 'blur(6px) saturate(140%)',
+          WebkitBackdropFilter: 'blur(6px) saturate(140%)',
+          background: 'linear-gradient(to bottom, rgba(45,31,26,0.52) 0%, rgba(45,31,26,0.18) 40%, rgba(45,31,26,0.75) 100%)',
+          zIndex: 2,
+        }}
+      />
 
       {/* ── Corner label top-right (EDGE™ corner gravity) ── */}
       <motion.div
@@ -117,19 +128,11 @@ export default function Hero() {
             maxWidth: "90vw",
           }}
         >
-          {/* Glass luxueux — conteneur texte hero */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.9, ease: EASE }}
             style={{
-              background: "rgba(45, 31, 26, 0.35)",
-              backdropFilter: "blur(18px) saturate(160%)",
-              WebkitBackdropFilter: "blur(18px) saturate(160%)",
-              border: "1px solid rgba(232, 25, 26, 0.15)",
-              borderRadius: "2px",
-              padding: "clamp(2rem, 4vw, 3.5rem) clamp(2rem, 5vw, 4rem)",
-              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.35)",
               display: "inline-block",
               maxWidth: "700px",
             }}
