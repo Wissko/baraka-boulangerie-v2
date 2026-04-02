@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const links = [
+  { label: "Home", href: "/" },
   { label: "Histoire", href: "/histoire" },
   { label: "Créations", href: "/creations" },
   { label: "Commander", href: "/commandes" },
@@ -27,21 +28,28 @@ export default function Navigation() {
 
   return (
     <>
+      {/* Wrapper centré — Framer Motion ne peut pas gérer translateX(-50%) seul */}
+      <div style={{
+        position: "fixed",
+        top: "1.25rem",
+        left: 0,
+        right: 0,
+        zIndex: 9000,
+        display: "flex",
+        justifyContent: "center",
+        pointerEvents: "none",
+      }}>
       <motion.nav
         className="nav-glass"
         initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.8, ease: EASE }}
         style={{
-          position: "fixed",
-          top: "1.25rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 9000,
+          pointerEvents: "auto",
           padding: "0.75rem 2rem",
           display: "flex",
           alignItems: "center",
-          gap: "2.5rem",
+          gap: "2rem",
           background: scrolled
             ? "rgba(45, 31, 26, 0.55)"
             : "rgba(45, 31, 26, 0.35)",
@@ -52,8 +60,9 @@ export default function Navigation() {
           boxShadow: scrolled
             ? "inset 0 1px 0 rgba(255,255,255,0.12), 0 8px 40px rgba(0,0,0,0.35), 0 2px 8px rgba(232,25,26,0.08)"
             : "inset 0 1px 0 rgba(255,255,255,0.08), 0 8px 32px rgba(0,0,0,0.2)",
-          transition: "all 0.4s cubic-bezier(0.16,1,0.36,1)",
+          transition: "background 0.4s cubic-bezier(0.16,1,0.36,1), box-shadow 0.4s cubic-bezier(0.16,1,0.36,1)",
           whiteSpace: "nowrap",
+          position: "relative",
         }}
       >
         {/* Logo */}
@@ -143,6 +152,7 @@ export default function Navigation() {
           />
         </button>
       </motion.nav>
+      </div>
 
       {/* Mobile menu */}
       <AnimatePresence>
