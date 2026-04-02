@@ -71,6 +71,7 @@ export default function Adresses() {
       className="mesh-dark"
       style={{
         padding: "clamp(5rem, 12vw, 10rem) clamp(1.5rem, 7vw, 5rem)",
+        paddingTop: "clamp(5rem, 10vw, 8rem)",
         overflow: "hidden",
         position: "relative",
       }}

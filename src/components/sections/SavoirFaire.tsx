@@ -38,7 +38,7 @@ export default function SavoirFaire() {
     <section
       id="savoir-faire"
       ref={sectionRef}
-      style={{ position: "relative", overflow: "hidden", background: "#2D1F1A" }}
+      style={{ position: "relative", overflow: "hidden", background: "#2D1F1A", paddingTop: "clamp(5rem, 10vw, 8rem)" }}
     >
       {/* ── Full-bleed image ── */}
       <div

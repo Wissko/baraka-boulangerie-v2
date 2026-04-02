@@ -225,7 +225,7 @@ export default function Hero() {
               style={{ marginTop: "2.5rem", display: "inline-block" }}
             >
               <a
-                href="#commandes"
+                href="/commandes"
                 id="cta-magnetic"
                 className="btn-glass"
               >

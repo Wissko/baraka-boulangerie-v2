@@ -8,11 +8,11 @@ import { motion, AnimatePresence } from "framer-motion";
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const links = [
-  { label: "Histoire", href: "#histoire" },
-  { label: "Creations", href: "#creations" },
-  { label: "Commander", href: "#commandes" },
-  { label: "Savoir-faire", href: "#savoir-faire" },
-  { label: "Adresses", href: "#adresses" },
+  { label: "Histoire", href: "/histoire" },
+  { label: "Créations", href: "/creations" },
+  { label: "Commander", href: "/commandes" },
+  { label: "Savoir-faire", href: "/savoir-faire" },
+  { label: "Adresses", href: "/adresses" },
 ];
 
 export default function Navigation() {
@@ -53,7 +53,7 @@ export default function Navigation() {
         }}
       >
         {/* Logo */}
-        <Link href="#hero" style={{ textDecoration: "none", display: "inline-block" }}>
+        <Link href="/" style={{ textDecoration: "none", display: "inline-block" }}>
           <Image
             src="/images/Design sans titre.svg"
             alt="Baraka Boulangeries"
@@ -73,7 +73,7 @@ export default function Navigation() {
           className="hidden md:flex"
         >
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               style={{
@@ -95,7 +95,7 @@ export default function Navigation() {
               }
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -161,25 +161,28 @@ export default function Navigation() {
             }}
           >
             {links.map((l, i) => (
-              <motion.a
+              <motion.div
                 key={l.href}
-                href={l.href}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.07, ease: EASE, duration: 0.4 }}
-                onClick={() => setOpen(false)}
-                style={{
-                  fontFamily: "var(--font-cormorant)",
-                  fontStyle: "italic",
-                  fontSize: "clamp(2.5rem, 8vw, 4rem)",
-                  color: "#FAF7F2",
-                  textDecoration: "none",
-                  fontWeight: 300,
-                  letterSpacing: "-0.02em",
-                }}
               >
-                {l.label}
-              </motion.a>
+                <Link
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  style={{
+                    fontFamily: "var(--font-cormorant)",
+                    fontStyle: "italic",
+                    fontSize: "clamp(2.5rem, 8vw, 4rem)",
+                    color: "#FAF7F2",
+                    textDecoration: "none",
+                    fontWeight: 300,
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  {l.label}
+                </Link>
+              </motion.div>
             ))}
           </motion.div>
         )}
